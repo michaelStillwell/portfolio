@@ -3,9 +3,15 @@
 	import { AppShell, AppBar } from "@skeletonlabs/skeleton";
 	import { filter, GreenFall } from "@skeletonlabs/skeleton";
 	import Icon from "@iconify/svelte";
+	import { dev } from "$app/environment";
+	import { inject } from "@vercel/analytics";
+
+	if (!dev) {
+		inject();
+	}
 </script>
 
-<GreenFall/>
+<GreenFall />
 
 <AppShell
 	class="min-h-screen bg-gradient-to-b from-surface-900 to-tertiary-600"
